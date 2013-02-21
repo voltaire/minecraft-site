@@ -10,16 +10,13 @@ def voltaire():
 
     return render_template('index.html', site_title="Voltaire")
 
-@app.route('/mcstatus/')
-def mcstatus():
+@app.route('/mcstatus/<hostname>')
+def mcstatus(hostname):
 
-    ftbPlayers = MinecraftQuery("ftb.voltaire.sh",25565).get_rules()['players']
-    ftbNumPlayers = MinecraftQuery("ftb.voltaire.sh",25565).get_rules()['numplayers']
+    onlinePlayers = MinecraftQuery(hostname,25565).get_rules()['players']
+    numPlayers = MinecraftQuery(hostname,25565).get_rules()['numplayers']
 
-    vanillaPlayers = MinecraftQuery("mc.voltaire.sh",25565).get_rules()['players']
-    vanillaNumPlayers = MinecraftQuery("mc.voltaire.sh",25565).get_rules()['numplayers']
-
-    return render_template('mcstatus.html', vanillaPlayers=vanillaPlayers, ftbPlayers=ftbPlayers, ftbNumPlayers=ftbNumPlayers, vanillaNumPlayers=vanillaNumPlayers)
+    return render_template('mcstatus.html', onlinePlayers=onlinePlayers, numPlayers=numPlayers)
 
 @app.route('/vnstat/')
 def vnstat():
