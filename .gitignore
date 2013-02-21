@@ -1,4 +1,4 @@
 env/
 *.pyc
 uwsgi.ini
-
+static/img/vnstat*
