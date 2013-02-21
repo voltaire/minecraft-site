@@ -1,13 +1,12 @@
-Voltaire Dashboard
-===
+# Voltaire Dashboard
 
-Thanks to:
----
+### Thanks to:
 * [Dinnerbone](https://github.com/Dinnerbone/mcstatus)
 * [Jinja2](http://jinja.pocoo.org/)
 * [Flask](http://flask.pocoo.org/)
 * [Python](http://www.python.org/)
 
+### LICENSE
 Copyright (c) 2013, [fly](https://github.com/fly)
 All rights reserved.
 
