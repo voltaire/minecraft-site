@@ -25,24 +25,5 @@ def mcstatus():
 def vnstat():
     return render_template('vnstat.html')
 
-"""@app.route('/vnstat/')
-def vnstat():
-
-    vnstat_main = vnstati("-s", i="em0", o="-")
-    vnstat_hourly = vnstati("-s", "-h", i="em0", o="-")
-    vnstat_daily = vnstati("-s", "-d", i="em0", o="-")
-    vnstat_top10 = vnstati("-s", "-t", i="em0", o="-")
-    vnstat_monthly = vnstati("-s", "-m", i="em0", o="-")
-
-    return render_template('vnstat.html', vnstat_main=vnstat_main, vnstat_hourly=vnstat_hourly, vnstat_daily=vnstat_daily, vnstat_top10=vnstat_top10, vnstat_monthly=vnstat_monthly)
-
-@app.route('/derp/')
-def serve_img():
-    vnstat_main = vnstati("-s", i="em0", o="-")
-    sup = open("vnstat/vnstat.png","wb")
-    mayne = sys.stdout.write( "Content-type: image/png\r\n\r\n" + file("vnstat/vnstat.png","rb").read() )
-    return "derp"
-"""
-
 if __name__ == '__main__':
     app.run()
