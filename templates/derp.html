@@ -1,26 +1,30 @@
-<div class="row">
-    <div class="dashboard-block vanilla-block span5 pull-left">
-        <h3>
-            {% if vanillaNumPlayers == 0 %} Nobody is being awesome right now.
-            {% elif vanillaNumPlayers == 1 %} The Lone Ranger:
-            {% elif vanillaNumPlayers > 1 %}{{ vanillaNumPlayers }} Minecrafters online now:
-            {% endif %}
-        </h3>
-        {% for player in vanillaPlayers %}
-        <a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ player }}"><img src="https://minotar.net/helm/{{ player }}/60.png"></a>
-        {% endfor %}
-    </div><!--/vanilla-->
+<div class="row-fluid">
+    <div class="span11">
+        <div class="row-fluid">
+            <div class="dashboard-block vanilla-block span5">
+                <h3>
+                    {% if vanillaNumPlayers == 0 %} Nobody is being awesome right now.
+                    {% elif vanillaNumPlayers == 1 %} The Lone Ranger:
+                    {% elif vanillaNumPlayers > 1 %}{{ vanillaNumPlayers }} Minecrafters online now:
+                    {% endif %}
+                </h3>
+                {% for player in vanillaPlayers %}
+                <a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ player }}"><img src="https://minotar.net/helm/{{ player }}/60.png"></a>
+                {% endfor %}
+            </div><!--/vanilla-->
 
-    <div class="dashboard-block ftb-block span5 pull-right">
-        <h3>
-            {% if ftbNumPlayers == 0 %} Nobody is being awesome right now.
-            {% elif ftbNumPlayers == 1 %} The Lone Ranger:
-            {% elif ftbNumPlayers > 1 %}{{ ftbNumPlayers }} Minecrafters online now:{% endif %}
-        </h3>
-        {% for player in ftbPlayers %}
-        <a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ player }}"><img src="https://minotar.net/helm/{{ player }}/60.png"></a>
-        {% endfor %}
-    </div><!--/ftb-->
-</div><!--/row-->
+            <div class="dashboard-block ftb-block span5 offset1">
+                <h3>
+                    {% if ftbNumPlayers == 0 %} Nobody is being awesome right now.
+                    {% elif ftbNumPlayers == 1 %} The Lone Ranger:
+                    {% elif ftbNumPlayers > 1 %}{{ ftbNumPlayers }} Minecrafters online now:{% endif %}
+                </h3>
+                {% for player in ftbPlayers %}
+                <a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ player }}"><img src="https://minotar.net/helm/{{ player }}/60.png"></a>
+                {% endfor %}
+            </div><!--/ftb-->
+        </div>
+    </div>
+</div><!--/row-fluid-->
 
 <script type="text/javascript">$('.avatars').tooltip();</script>
