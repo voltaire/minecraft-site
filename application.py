@@ -8,7 +8,7 @@ def voltaire():
     #url_for('static', filename='css/bootstrap-responsive.min.css')
     #url_for('static', filename='js/mcstatus.js')
 
-    return render_template('index.html')
+    return render_template('index.html', site_title="Voltaire")
 
 @app.route('/mcstatus/')
 def mcstatus():
