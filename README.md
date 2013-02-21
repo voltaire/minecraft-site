@@ -6,6 +6,7 @@
 * [Werkzeug](http://werkzeug.pocoo.org/)==0.8.3
 * [wsgiref](http://docs.python.org/2/library/wsgiref.html)==0.1.2
 * [mcstatus](https://github.com/Dinnerbone/mcstatus)
+* [vnstat](http://humdi.net/vnstat/)
 
 #### Errata:
 * vnstat is output is currently done via cron: `0,15,30,45 * * * * /path/to/updatevnstat`
