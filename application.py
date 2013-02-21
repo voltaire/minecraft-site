@@ -19,7 +19,7 @@ def mcstatus():
     vanillaPlayers = MinecraftQuery("mc.voltaire.sh",25565).get_rules()['players']
     vanillaNumPlayers = MinecraftQuery("mc.voltaire.sh",25565).get_rules()['numplayers']
 
-    return render_template('derp.html', vanillaPlayers=vanillaPlayers, ftbPlayers=ftbPlayers, ftbNumPlayers=ftbNumPlayers, vanillaNumPlayers=vanillaNumPlayers)
+    return render_template('mcstatus.html', vanillaPlayers=vanillaPlayers, ftbPlayers=ftbPlayers, ftbNumPlayers=ftbNumPlayers, vanillaNumPlayers=vanillaNumPlayers)
 
 @app.route('/vnstat/')
 def vnstat():
