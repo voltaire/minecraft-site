@@ -25,17 +25,17 @@
                 <div class="span11">
                     <div class="row-fluid">
                         <div class="dashboard-block vanilla-block span5">
-                            <p>Connecting...</p>
+                            <img src="/static/img/ajax-loader.gif">
                         </div><!--/vanilla-block-->
                         <div class="dashboard-block ftb-block span5 offset1">
-                            <p>Connecting...</p>
+                            <img src="/static/img/ajax-loader.gif">
                         </div><!--/ftb-block-->
                     </div><!--/row-fluid-->
                 </div><!--/span11-->
             </div><!--/row-fluid-->
             
             <div class="vnstat">
-                Connecting to vnstat...
+                <img src="/static/img/ajax-loader.gif">
             </div><!--/vnstat-->
 
         </div><!--/container-->
@@ -45,6 +45,5 @@
         <script type="text/javascript">$(document).ready(function(){$('.vnstat').load('http://voltaire.sh/vnstat');});</script><!--vnstat-->
         <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/static/js/bootstrap-tooltip.js" type="text/javascript"></script>
-        <script type="text/javascript">$('.avatars').tooltip();</script>
     </body>
 </html>
