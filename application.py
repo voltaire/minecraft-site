@@ -7,8 +7,10 @@ app = Flask(__name__)
 def voltaire():
     #url_for('static', filename='css/bootstrap-responsive.min.css')
     #url_for('static', filename='js/mcstatus.js')
+    servers = {'vanilla': "mc.voltaire.sh", 'ftb': "ftb.voltaire.sh", 'creative': "create.voltaire.sh"}
+    numServers = len(servers)
 
-    return render_template('index.html', site_title="Voltaire")
+    return render_template('index.html', site_title="Voltaire", servers=servers, numServers=numServers)
 
 @app.route('/mcstatus/<hostname>')
 def mcstatus(hostname):
