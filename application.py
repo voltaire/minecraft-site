@@ -15,10 +15,12 @@ def voltaire():
 @app.route('/mcstatus/<hostname>')
 def mcstatus(hostname):
 
-    onlinePlayers = MinecraftQuery(hostname,25565).get_rules()['players']
-    numPlayers = MinecraftQuery(hostname,25565).get_rules()['numplayers']
+    get_status = MinecraftQuery(hostname,25565).get_rules()
+    onlinePlayers = get_status['players']
+    numPlayers = get_status['numplayers']
+    maxPlayers = get_status['maxplayers']
 
-    return render_template('mcstatus.html', onlinePlayers=onlinePlayers, numPlayers=numPlayers)
+    return render_template('mcstatus.html', onlinePlayers=onlinePlayers, numPlayers=numPlayers, maxPlayers=maxPlayers)
 
 @app.route('/vnstat/')
 def vnstat():

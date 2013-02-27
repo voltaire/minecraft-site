@@ -1,8 +1,9 @@
 <h3>
-    {% if numPlayers == 0 %} Nobody is being awesome right now.
+    {#    {% if numPlayers == 0 %} Nobody is being awesome right now.
     {% elif numPlayers == 1 %} The Lone Ranger:
     {% elif numPlayers > 1 %}{{ numPlayers }} Minecrafters online now:
-    {% endif %}
+    {% endif %}#}
+    {% if numPlayers == 0 %}{{ numPlayers }}/{{ maxPlayers }}{% endif %}
 </h3>
 
 {% for player in onlinePlayers %}
