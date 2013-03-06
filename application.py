@@ -22,9 +22,5 @@ def mcstatus(hostname):
 
     return render_template('mcstatus.html', onlinePlayers=onlinePlayers, numPlayers=numPlayers, maxPlayers=maxPlayers)
 
-@app.route('/vnstat/')
-def vnstat():
-    return render_template('vnstat.html')
-
 if __name__ == '__main__':
     app.run()
