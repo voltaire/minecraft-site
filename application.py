@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask.ext.mail import Mail, Message
 
 mail = Mail()
@@ -13,6 +13,10 @@ def index():
     msg.html = "<b>testing</b>"
     mail.send(msg)
     return msg.html
+
+@app.route("/submit_application", methods=['POST'])
+def submit_application:
+
 
 if __name__ == '__main__':
     app.run()
