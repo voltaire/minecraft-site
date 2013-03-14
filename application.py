@@ -2,13 +2,8 @@ from flask import Flask
 from flask.ext.mail import Mail, Message
 
 mail = Mail()
-app = Flask(__name__)
-app.config.update(
-        MAIL_SERVER='smtp.gmail.com',
-        MAIL_PORT='465',
-        MAIL_USE_SSL=True,
-        MAIL_USERNAME='nokbar@voltaire.sh',
-        MAIL_PASSWORD='H3rpD3rpL0l')
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_pyfile('application.cfg', silent=True)
 mail.init_app(app)
 
 @app.route("/")
