@@ -15,8 +15,8 @@ def mcstatus(MCSERVER_ADDR):
 
     get_status = MinecraftQuery(MCSERVER_ADDR,25565).get_rules()
     ONLINE_PLAYERS = get_status['players']
-    NUM_PLAYERS = get_status['NUM_PLAYERS']
-    MAX_PLAYERS = get_status['MAX_PLAYERS']
+    NUM_PLAYERS = get_status['numplayers']
+    MAX_PLAYERS = get_status['maxplayers']
 
     return render_template('mcstatus.html', ONLINE_PLAYERS=ONLINE_PLAYERS, NUM_PLAYERS=NUM_PLAYERS, MAX_PLAYERS=MAX_PLAYERS)
 
