@@ -8,17 +8,17 @@ app.config.from_pyfile('application.cfg', silent=True)
 def voltaire():
     NUMSERVERS = len(MCSERVERS)
 
-    return render_template('index.html', site_title=SITE_TITLE, servers=MCSERVERS, numServers=NUMSERVERS)
+    return render_template('index.html', PAGE_TITLE=PAGE_TITLE, SITE_TITLE=SITE_TITLE, MCSERVERS=MCSERVERS, NUMSERVERS=NUMSERVERS)
 
 @app.route('/mcstatus/<hostname>')
-def mcstatus(hostname):
+def mcstatus(MCSERVER_ADDR):
 
-    get_status = MinecraftQuery(hostname,25565).get_rules()
-    onlinePlayers = get_status['players']
-    numPlayers = get_status['numplayers']
-    maxPlayers = get_status['maxplayers']
+    get_status = MinecraftQuery(MCSERVER_ADDR,25565).get_rules()
+    ONLINE_PLAYERS = get_status['players']
+    NUM_PLAYERS = get_status['NUM_PLAYERS']
+    MAX_PLAYERS = get_status['MAX_PLAYERS']
 
-    return render_template('mcstatus.html', onlinePlayers=onlinePlayers, numPlayers=numPlayers, maxPlayers=maxPlayers)
+    return render_template('mcstatus.html', ONLINE_PLAYERS=ONLINE_PLAYERS, NUM_PLAYERS=NUM_PLAYERS, MAX_PLAYERS=MAX_PLAYERS)
 
 if __name__ == '__main__':
     app.run()

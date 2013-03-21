@@ -1,13 +1,13 @@
 <h3>
-    {#    {% if numPlayers == 0 %} Nobody is being awesome right now.
-    {% elif numPlayers == 1 %} The Lone Ranger:
-    {% elif numPlayers > 1 %}{{ numPlayers }} Minecrafters online now:
+    {#    {% if NUM_PLAYERS == 0 %} Nobody is being awesome right now.
+    {% elif NUM_PLAYERS == 1 %} The Lone Ranger:
+    {% elif NUM_PLAYERS > 1 %}{{ NUM_PLAYERS }} Minecrafters online now:
     {% endif %}#}
-    {% if numPlayers == 0 %}{{ numPlayers }}/{{ maxPlayers }}{% endif %}
+    {% if NUM_PLAYERS == 0 %}{{ NUM_PLAYERS }}/{{ MAX_PLAYERS }}{% endif %}
 </h3>
 
-{% for player in onlinePlayers %}
-<a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ player }}"><img src="https://minotar.net/helm/{{ player }}/60.png"></a>
+{% for PLAYER in ONLINE_PLAYERS %}
+<a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ PLAYER }}"><img src="https://minotar.net/helm/{{ PLAYER }}/60.png"></a>
 {% endfor %}
 
 <script type="text/javascript">$('.avatars').tooltip();</script>
