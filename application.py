@@ -10,6 +10,10 @@ def voltaire():
 
     return render_template('index.html', PAGE_TITLE=PAGE_TITLE, SITE_TITLE=SITE_TITLE, MCSERVERS=MCSERVERS, NUMSERVERS=NUMSERVERS)
 
+@app.route('/about')
+def about():
+    return render_template('about.html', SITE_TITLE=SITE_TITLE)
+
 @app.route('/mcstatus/<hostname>')
 def mcstatus(MCSERVER_ADDR):
 
