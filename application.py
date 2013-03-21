@@ -1,16 +1,14 @@
 from flask import Flask, render_template
 from minecraft_query import MinecraftQuery
 
-app = Flask(__name__)
+app = Flask(__name__, instance_relative_config=True)
+app.config.from_pyfile('application.cfg', silent=True)
 
 @app.route('/')
 def voltaire():
-    #url_for('static', filename='css/bootstrap-responsive.min.css')
-    #url_for('static', filename='js/mcstatus.js')
-    servers = {'vanilla': "mc.voltaire.sh", 'ftb': "ftb.voltaire.sh", 'creative': "create.voltaire.sh"}
-    numServers = len(servers)
+    NUMSERVERS = len(MCSERVERS)
 
-    return render_template('index.html', site_title="Voltaire", servers=servers, numServers=numServers)
+    return render_template('index.html', site_title=SITE_TITLE, servers=MCSERVERS, numServers=NUMSERVERS)
 
 @app.route('/mcstatus/<hostname>')
 def mcstatus(hostname):
