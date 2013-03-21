@@ -1,0 +1,23 @@
+<div class="sidebar-logo">
+    <a href="/"><img src="{{ LOGO_LOCATION }}"></a>
+</div>
+
+<div class="sidebar-links">
+
+    {% for LINK, LINK_NAME, LINK_PATH in LINKS %}
+    <div class="sidebar-link-entry"><a href="{{ LINK_PATH }}">{{ LINK_NAME }}</a></div>
+    {% endfor %}
+
+</div>
+
+<div class="sidebar-footer">
+
+    <div class="sidebar-footer-copyright">
+        <p>&copy; 2013 <a href="/">{{ SITE_NAME }}</a></p>
+    </div>
+
+    <div class="sidebar-footer-links">
+        <p><a href="{{ BLOG_LINK }}">Blog</a> - <a href="{{ ABOUT_LINK }}">About</a> - <a href="https://twitter.com/{{ TWITTER_ID }}">Twitter</a></p>
+    </div>
+
+</div>
