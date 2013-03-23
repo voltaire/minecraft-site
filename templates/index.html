@@ -22,7 +22,7 @@
             <div class="row-fluid">
                 <div class="span11">
                     <div class="row-fluid">
-                        {% for SERVER_TYPE in SERVERS %}
+                        {% for SERVER_TYPE in MCSERVERS %}
                         <div class="dashboard-block {{ SERVER_TYPE }}-block span{{ 11 // NUMSERVERS }}">
                             <img src="/static/img/ajax-loader.gif">
                         </div><!--/{{ SERVER_TYPE }}-block-->
@@ -33,7 +33,7 @@
             
         </div><!--/container-->
 
-        {% for SERVER_TYPE, SERVER_ADDR in NUMSERVERS.iteritems() %}
+        {% for SERVER_TYPE, SERVER_ADDR in MCSERVERS.iteritems() %}
         <script type="text/javascript">$(document).ready(function(){$('.{{ SERVER_TYPE }}-block').load('/mcstatus/{{ SERVER_ADDR }}');var refreshId=setInterval(function(){$('.{{ SERVER_TYPE }}-block').load('/mcstatus/{{ SERVER_ADDR }}')},15000);$.ajaxSetup({cache:false})});</script><!--mcstatus-->
         {% endfor %}
         <script type="text/javascript">$(document).ready(function(){$('.vnstat').load('/vnstat');});</script><!--vnstat-->
