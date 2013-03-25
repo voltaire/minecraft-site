@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-import mcstatus
+from mcstatus import mcstatus
 
 @app.route('/')
 def voltaire():
@@ -12,8 +12,10 @@ def voltaire():
 def about():
     return render_template('about.html', SITE_TITLE=SITE_TITLE)
 
-@app.route('/mcstatus/<MCSERVER_ADDR>')
-def mcstatus(MCSERVER_ADDR):
+@app.route('/mcstatus/<MCSTATUS>')
+def mcstatus(MCSTATUS):
+    global MCSERVER_ADDR
+    MCSERVER_ADDR = MCSTATUS
 
     return render_template('mcstatus.html')
 
