@@ -1,6 +1,6 @@
 from minecraft_query import MinecraftQuery
 
-class mcstatus(MCSERVER_ADDR):
+class mcstatus():
 
     query_mcserver = MinecraftQuery(MCSERVER_ADDR,25565).get_rules()
 
