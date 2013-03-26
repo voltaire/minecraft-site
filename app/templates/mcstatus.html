@@ -1,12 +1,12 @@
 <h3>
-    {#    {% if mcstatus.NUM_PLAYERS == 0 %} Nobody is being awesome right now.
-    {% elif mcstatus.NUM_PLAYERS == 1 %} The Lone Ranger:
-    {% elif mcstatus.NUM_PLAYERS > 1 %}{{ mcstatus.NUM_PLAYERS }} Minecrafters online now:
+    {#    {% if get_status['numplayers'] == 0 %} Nobody is being awesome right now.
+    {% elif get_status['numplayers'] == 1 %} The Lone Ranger:
+    {% elif get_status['numplayers'] > 1 %}{{ get_status['numplayers'] }} Minecrafters online now:
     {% endif %}#}
-    {% if mcstatus.NUM_PLAYERS == 0 %}{{ mcstatus.NUM_PLAYERS }}/{{ mcstatus.MAX_PLAYERS }}{% endif %}
+    {% if get_status['numplayers'] == 0 %}{{ get_status['numplayers'] }}/{{ get_status['maxplayers'] }}{% endif %}
 </h3>
 
-{% for PLAYER in mcstatus.ONLINE_PLAYERS %}
+{% for PLAYER in get_status['players'] %}
 <a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ PLAYER }}"><img src="https://minotar.net/helm/{{ PLAYER }}/60.png"></a>
 {% endfor %}
 
