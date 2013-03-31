@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sign Up:</h1>
+<form action="" method="post" name="signup">
+    {{form.hidden.tag()}}
+    <p>
+        Please enter your Minecraft Username:<br>
+        {{form.mcuser(size=16)}}<br>
+    </p>
+    <p>
+        Please enter your email (we won't spam you!):<br>
+        {{form.mcemail()}}<br>
+    </p>
+    <p><input type="submit" value="Sign In"></p>
+</form>
+{% endblock %}
+
