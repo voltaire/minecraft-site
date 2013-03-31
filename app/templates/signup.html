@@ -1,18 +1,16 @@
 {% extends "base.html" %}
+{% from "_formhelpers.html" import render_field %}
 
 {% block content %}
 <h1>Sign Up:</h1>
-<form action="" method="post" name="signup">
-    {{form.hidden.tag()}}
-    <p>
-        Please enter your Minecraft Username:<br>
-        {{form.mcuser(size=16)}}<br>
-    </p>
-    <p>
-        Please enter your email (we won't spam you!):<br>
-        {{form.mcemail()}}<br>
-    </p>
-    <p><input type="submit" value="Sign In"></p>
+<form action="/signup" method="post" name="signup">
+    <dl>
+        {{ form.hidden.tag() }}
+        {{ render_field(form.mcuser) }}
+        {{ render_field(form.mcemail) }}
+        {{ render_field(form.accept_tos) }}
+    </dl>
+    <p><input type="submit" value="Sign Up!"></p>
 </form>
 {% endblock %}
 
