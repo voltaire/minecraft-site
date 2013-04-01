@@ -14,8 +14,7 @@ def signup():
     if request.method == 'POST' and form.validate():
         user = User(form.mcuser.data, form.mcemail.data)
         db_session.add(user)
-        flash('Thanks for signing up.
-        Please check your email for a response soon!')
+        flash('Thanks for signing up. Please check your email for a response soon!')
         return redirect(url_for('index'))
     return render_template('signup.html',
             title = 'Signup',
