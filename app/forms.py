@@ -29,7 +29,7 @@ class mcHasPaid(object):
         if not valid:
             if self.message is None:
                 self.message = field.gettext('Username does not have a paid Minecraft account.')
-            raise ValidationError(self.message)
+            raise validators.ValidationError(self.message)
 
     def check_mcUserHasPaid(self, value):
         param = urllib.quote(value)
