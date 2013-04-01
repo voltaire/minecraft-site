@@ -5,7 +5,7 @@
 <h1>Sign Up:</h1>
 <form action="/signup" method="post" name="signup">
     <dl>
-        {{ form.hidden.tag() }}
+        {{ form.hidden_tag() }}
         {{ render_field(form.mcuser) }}
         {{ render_field(form.mcemail) }}
         {{ render_field(form.accept_tos) }}
