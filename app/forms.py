@@ -38,18 +38,18 @@ class mcHasPaid(object):
             raise False
 
 class SignupForm(Form):
-    mcuser = TextField('Minecraft Username', [
+    mcuser = TextField('Minecraft Username:', [
         validators.Length(max=16, message='Username too long'),
         validators.Regexp('\w', message='Illegal username'),
         mcHasPaid(),
         validators.Required(message='Enter your Minecraft Username')
         ])
-    mcemail = TextField('Email Address', [
+    mcemail = TextField('Email Address:', [
         validators.Length(min=6, max=35, message='Email needs to be between 6-35 characters'),
         validators.Required(message='Enter your email address'),
         validators.Email(message='Invalid email address')
         ])
-    accept_tos = BooleanField('I accept the TOS', [
+    accept_tos = BooleanField('I accept the TOS:', [
         validators.Required(message='Accept the TOS')
         ])
 
