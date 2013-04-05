@@ -4,7 +4,7 @@ import urllib
 class mcHasPaid(object):
     def __init__(self, message=None):
         if not message:
-            message = u'Username does not have a paid Minecraft account.'
+            message = u'Username does not have a paid Minecraft account!'
         self.message = message
 
     def __call__(self, form, field):
@@ -16,17 +16,17 @@ class mcHasPaid(object):
 
 class SignupForm(Form):
     mcuser = TextField('Minecraft Username:', [
-        validators.Length(max=16, message='Username too long'),
-        validators.Regexp('\w', message='Illegal username'),
+        validators.Length(max=16, message='Username too long!'),
+        validators.Regexp('\w', message='Illegal username!'),
         mcHasPaid(),
-        validators.Required(message='Enter your Minecraft Username')
+        validators.Required(message='Enter your Minecraft Username!')
         ])
     mcemail = TextField('Email Address:', [
-        validators.Length(min=6, max=35, message='Email needs to be between 6-35 characters'),
-        validators.Required(message='Enter your email address'),
-        validators.Email(message='Invalid email address')
+        validators.Length(min=6, max=35, message='Email needs to be between 6-35 characters!'),
+        validators.Required(message='Enter your email address!'),
+        validators.Email(message='Invalid email address!')
         ])
-    accept_tos = BooleanField('I accept the TOS:', [
-        validators.Required(message='Accept the TOS')
+    accept_tos = BooleanField('I accept the TOS.', [
+        validators.Required(message='Please accept the TOS!')
         ])
 
