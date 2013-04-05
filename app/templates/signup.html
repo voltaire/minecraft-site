@@ -1,16 +1,20 @@
 {% extends "base.html" %}
-{% from "_formhelpers.html" import render_field %}
+{% from "_formhelpers.html" import render_field, render_checkbox %}
 
 {% block content %}
-<h1>Sign Up:</h1>
-<form action="/signup" method="post" name="signup">
-    <dl>
+<div class="row-fluid signup">
+  <div class="span4 offset3">
+    <h1>Sign Up:</h1>
+    <form action="/signup" method="post" name="signup">
+      <dl>
         {{ form.hidden_tag() }}
         {{ render_field(form.mcuser) }}
         {{ render_field(form.mcemail) }}
-        {{ render_field(form.accept_tos) }}
-    </dl>
-    <p><input type="submit" value="Sign Up!"></p>
-</form>
+      </dl>
+      {{ render_checkbox(form.accept_tos) }}
+      <p><input type="submit" value="Sign Up!"></p>
+    </form>
+  </div><!--/span4 offset3-->
+</div><!--/row-fluid signup-->
 {% endblock %}
 
