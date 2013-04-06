@@ -11,6 +11,7 @@
 #### Errata:
 * vnstat is output is currently done via cron: `0,15,30,45 * * * * /path/to/updatevnstat`
 * Create a config file in ```application/config.py``` with the following contents:
+
 ```python
 CSRF_ENABLED = True
 SECRET_KEY = 'SEKRIT SEKRIT'
@@ -19,6 +20,7 @@ MCSERVERS = [
         { 'name': 'ftb',      'hostname': 'ip.addr.here',     'port': '25565' },
         { 'name': 'creative', 'hostname': 'ip.addr.here',     'port': '25565' }]
 ```
+
 ### Thanks to:
 * [Dinnerbone](https://github.com/Dinnerbone)
 * [Jinja2](http://jinja.pocoo.org/)
