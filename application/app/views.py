@@ -4,11 +4,6 @@ from vmail import testmail
 from forms import SignupForm
 from models import User, ROLE_USER, ROLE_MEMBER, ROLE_ADMIN
 
-@app.route("/")
-def index():
-    testmail()
-    return render_template('testmail.html')
-
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
     form = SignupForm(request.form)
@@ -22,5 +17,3 @@ def signup():
             title = 'Signup',
             form = form)
 
-# @app.route("/submit_application", methods=['POST'])
-# def submit_application(): 
