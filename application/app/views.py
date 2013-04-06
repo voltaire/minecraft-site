@@ -1,5 +1,6 @@
 from flask import render_template
 from app import app
+from minecraft_query import MinecraftQuery
 
 @app.route('/')
 def voltaire():
