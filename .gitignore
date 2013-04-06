@@ -1,7 +1,4 @@
-env/
 *.pyc
-uwsgi.ini
-static/img/vnstat*
+env
+.DS_STORE
 config.py
-
-.DS_Store

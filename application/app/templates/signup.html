@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import render_field, render_checkbox %}
+
+{% block content %}
+<div class="row-fluid signup">
+  <div class="span4 offset4">
+    <form action="/signup" method="post" name="signup">
+      <legend>Sign Up:</legend>
+      {{ form.hidden_tag() }}
+      {{ render_field(form.mcuser) }}
+      {{ render_field(form.mcemail) }}
+      <div class="control-group">
+        <div class="controls">
+          {{ render_checkbox(form.accept_tos) }}
+          <br />
+          <button type="submit" class="btn btn-primary">Sign Up!</button>
+        </div><!--/controls-->
+      </div><!--/control-group-->
+    </form>
+  </div><!--/span4 offset3-->
+</div><!--/row-fluid signup-->
+{% endblock %}
+

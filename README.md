@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Voltaire Dashboard
 
 ## Prerequisites:
@@ -13,8 +14,22 @@
 * Create a config file in ```application/config.py``` with the following contents:
 
 ```python
+import os
+
 CSRF_ENABLED = True
 SECRET_KEY = 'SEKRIT SEKRIT'
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+
+MAIL_SERVER='your.mail.server'
+MAIL_PORT='mail.port'
+MAIL_USE_SSL=True
+MAIL_USERNAME='user@mail.server'
+MAIL_PASSWORD='mailpassword'
+
 MCSERVERS = [
         { 'name': 'vanilla',  'hostname': 'ip.addr.here',     'port': '25565' },
         { 'name': 'ftb',      'hostname': 'ip.addr.here',     'port': '25565' },
