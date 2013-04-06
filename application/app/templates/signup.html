@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% from "_formhelpers.html" import render_field, render_checkbox %}
 
+{% block navbar %}
+  <li><a href="/">Home</a></li>
+  <li class="active"><a href="#">Apply</a></li>
+{% endblock %}
+
 {% block content %}
 <div class="row-fluid signup">
   <div class="span4 offset4">
