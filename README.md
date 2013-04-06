@@ -10,7 +10,15 @@
 
 #### Errata:
 * vnstat is output is currently done via cron: `0,15,30,45 * * * * /path/to/updatevnstat`
-
+* Create a config file in ```application/config.py``` with the following contents:
+```python
+CSRF_ENABLED = True
+SECRET_KEY = 'SEKRIT SEKRIT'
+MCSERVERS = [
+        { 'name': 'vanilla',  'hostname': 'ip.addr.here',     'port': '25565' },
+        { 'name': 'ftb',      'hostname': 'ip.addr.here',     'port': '25565' },
+        { 'name': 'creative', 'hostname': 'ip.addr.here',     'port': '25565' }]
+```
 ### Thanks to:
 * [Dinnerbone](https://github.com/Dinnerbone)
 * [Jinja2](http://jinja.pocoo.org/)
@@ -27,4 +35,5 @@ Redistribution and use in source and binary forms, with or without modification,
 * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
