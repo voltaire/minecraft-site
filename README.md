@@ -1,15 +1,6 @@
 # Voltaire Dashboard
 
-## Prerequisites:
-* [Flask](http://flask.pocoo.org/)==0.9
-* [Jinja2](http://jinja.pocoo.org/)==2.6
-* [Werkzeug](http://werkzeug.pocoo.org/)==0.8.3
-* [wsgiref](http://docs.python.org/2/library/wsgiref.html)==0.1.2
-* [mcstatus](https://github.com/Dinnerbone/mcstatus)
-* [vnstat](http://humdi.net/vnstat/)
-
 #### Errata:
-* vnstat is output is currently done via cron: `0,15,30,45 * * * * /path/to/updatevnstat`
 * Create a config file in ```application/config.py``` with the following contents:
 
 ```python
