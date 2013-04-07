@@ -33,7 +33,3 @@
   {% endif %}
 {% endmacro %} 
 
-{% macro ip_hidden_form(field) %}
-  {{ field(formdata=userAddr, **kwargs)|safe }}
-{% endmacro %}
-

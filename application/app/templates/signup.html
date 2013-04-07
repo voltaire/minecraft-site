@@ -12,7 +12,6 @@
     <form action="/signup" method="post" name="signup">
       <legend>Sign Up:</legend>
       {{ form.hidden_tag() }}
-      {{ ip_hidden_form(form.applicant_ip) }}
       {{ render_field(form.mcuser) }}
       {{ render_field(form.mcemail) }}
       <div class="control-group">

@@ -30,13 +30,12 @@ def signup():
     form = SignupForm(request.form)
     userAddr = request.environ.get('REMOTE_ADDR')
     if request.method == 'POST' and form.validate():
-        user = User(form.mcuser.data, form.mcemail.data, form.applicant_ip.data)
+        user = User(form.mcuser.data, form.mcemail.data, userAddr)
         db.session.add(user)
         db.session.commit()
         flash('Thanks for signing up. Please check your email for a response soon!')
         return redirect(url_for('index'))
     return render_template('signup.html',
             title = 'Signup',
-            userAddr = userAddr,
             form = form)
 
