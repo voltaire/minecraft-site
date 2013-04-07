@@ -1,4 +1,4 @@
-from flask.ext.wtf import Form, TextField, BooleanField, Required, PasswordField, validators, HiddenField
+from flask.ext.wtf import Form, TextField, BooleanField, Required, PasswordField, validators, HiddenField, RecaptchaField
 from flask import request
 import urllib
 
@@ -31,6 +31,7 @@ class SignupForm(Form):
         validators.Required(message='Enter your email address!'),
         validators.Email(message='Invalid email address!')
         ])
+    recaptcha = RecaptchaField()
     accept_tos = BooleanField('I accept the TOS.', [
         validators.Required(message='Please accept the TOS!')
         ])

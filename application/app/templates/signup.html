@@ -16,6 +16,7 @@
       {{ render_field(form.mcemail) }}
       <div class="control-group">
         <div class="controls">
+          {{ form.recaptcha }}
           {{ render_checkbox(form.accept_tos) }}
           <br />
           <button type="submit" class="btn btn-primary">Sign Up!</button>
