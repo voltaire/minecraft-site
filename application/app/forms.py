@@ -1,4 +1,5 @@
-from flask.ext.wtf import Form, TextField, BooleanField, Required, PasswordField, validators
+from flask.ext.wtf import Form, TextField, BooleanField, Required, PasswordField, validators, HiddenField
+from flask import request
 import urllib
 
 class mcHasPaid(object):
@@ -15,6 +16,10 @@ class mcHasPaid(object):
         raise validators.ValidationError(self.message)
 
 class SignupForm(Form):
+    applicant_ip = HiddenField([
+        validators.IPAddress(ipv6=True),
+        validators.Required(message='Contact the administrator.')
+        ])
     mcuser = TextField('Minecraft Username:', [
         validators.Length(max=16, message='Username too long!'),
         validators.Regexp('\w', message='Illegal username!'),

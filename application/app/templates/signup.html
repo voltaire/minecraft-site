@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_formhelpers.html" import render_field, render_checkbox %}
+{% from "_formhelpers.html" import render_field, render_checkbox, ip_hidden_form %}
 
 {% block navbar %}
   <li><a href="/">Home</a></li>
@@ -12,6 +12,7 @@
     <form action="/signup" method="post" name="signup">
       <legend>Sign Up:</legend>
       {{ form.hidden_tag() }}
+      {{ ip_hidden_form(form.applicant_ip) }}
       {{ render_field(form.mcuser) }}
       {{ render_field(form.mcemail) }}
       <div class="control-group">
