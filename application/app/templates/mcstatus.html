@@ -7,7 +7,7 @@
 </h3>
 
 {% for PLAYER in get_status['players'] %}
-<a href="#" class="avatars" data-placement="bottom" style="display:inline-block" data-toggle="tooltip" title="{{ PLAYER }}"><img src="https://minotar.net/helm/{{ PLAYER }}/60.png"></a>
+  <a href="#" class="avatars" data-placement="bottom" data-toggle="tooltip" title="{{ PLAYER }}"><img src="https://minotar.net/helm/{{ PLAYER }}/60.png"></a>
 {% endfor %}
 
 <script type="text/javascript">$('.avatars').tooltip();</script>
