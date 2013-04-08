@@ -20,7 +20,7 @@
 {% block javascripts %}
   {{ super() }}
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js" type="text/javascript"></script>
-  <script type="text/javascript">$.backstretch("/static/img/bg/arc.png";</script><!--/backstretch-->
+  <script type="text/javascript">$.backstretch("/static/img/bg/arc.png");</script><!--/backstretch-->
   <script type="text/javascript">$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2});$(window).resize(function(){$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2})});$(window).resize();</script><!--center.js-->
   <script type="text/javascript">$(document).ready(function(){$('.{{ MCSERVER_NAME }}-block').load('/mcstatus/{{ MCSERVER_ADDR }}/{{ MCSERVER_PORT }}');var refreshId=setInterval(function(){$('.{{ MCSERVER_NAME }}-block').load('/mcstatus/{{ MCSERVER_ADDR }}/{{ MCSERVER_PORT }}')},15000);$.ajaxSetup({cache:false})});</script><!--mcstatus-->
 {% endblock %}
