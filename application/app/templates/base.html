@@ -21,8 +21,25 @@
       <div class="navbar-inner">
         <a class="brand" href="/">Voltaire</a>
         <ul class="nav">
+
           {% block navbar %}
+
+          {% set navigation_bar = [
+            ('/', 'index', 'Index'),
+            ('/blog', 'blog', 'Blog'),
+            ('/forums', 'forums', 'Forums'),
+            ('/map', 'map', 'Map'),
+            ('/donate', 'donate', 'Donate'),
+            ('/dash', 'dash', 'Dash'),
+            ('/signup', 'signup', 'Apply')
+          ] -%}
+          {% set active_page = active_page|default('index') -%}          
+
+          {% for href, id, caption in navigation_bar %}
+          <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+          {% endfor %}
           {% endblock %}
+
         </ul>
       </div><!--/navbar-inner-->
     </div><!--/navbar-->
@@ -40,4 +57,5 @@
 
   </body>
 </html>
+
 

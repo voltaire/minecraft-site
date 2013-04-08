@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% from "_formhelpers.html" import render_field, render_checkbox, ip_hidden_form %}
-
-{% block navbar %}
-  <li><a href="/">Home</a></li>
-  <li><a href="/dash">Dash</a></li>
-  <li class="active"><a href="#">Apply</a></li>
-{% endblock %}
+{% set active_page = "signup" %}
 
 {% block content %}
 <div class="row-fluid signup">

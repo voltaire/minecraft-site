@@ -1,10 +1,5 @@
 {% extends "base.html" %}
-
-{% block navbar %}
-  <li><a href="/">Home</a></li>
-  <li class="active"><a href="#">Dash</a></li>
-  <li><a href="/signup">Apply</a></li>
-{% endblock %}
+{% set active_page = "dash" %}
 
 {% block content %}
 <div class="row-fluid">
