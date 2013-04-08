@@ -1,10 +1,5 @@
 {% extends "base.html" %}
-
-{% block navbar %}
-  <li class="active"><a href="#">Home</a></li>
-  <li><a href="/dash">Dash</a></li>
-  <li><a href="/signup">Apply</a></li>
-{% endblock %}
+{% set active_page = "index" %}
 
 {% block content %}
   <div class="hero-unit centerMe" style="opacity:0.85;">
