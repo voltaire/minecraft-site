@@ -7,9 +7,20 @@ from models import User, ROLE_USER, ROLE_MEMBER, ROLE_ADMIN
 
 @app.route('/')
 def index():
-    NUMSERVERS = len(app.config['MCSERVERS'])
 
     return render_template('index.html',
+            PAGE_TITLE='Home',
+            SITE_TITLE='Voltaire',
+            MCSERVER_NAME='vanilla',
+            MCSERVER_ADDR='mc.voltaire.sh',
+            MCSERVER_PORT='25565')
+
+@app.route('/dash')
+
+def dash():
+    NUMSERVERS = len(app.config['MCSERVERS'])
+
+    return render_template('dash.html',
             PAGE_TITLE='Dashboard',
             SITE_TITLE='Voltaire',
             NUMSERVERS=NUMSERVERS)
