@@ -3,7 +3,7 @@ from app import app, db
 from minecraft_query import MinecraftQuery
 from vmail import testmail
 from forms import SignupForm
-from models import User, ROLE_USER, ROLE_MEMBER, ROLE_ADMIN
+from models import User
 
 @app.route('/')
 def index():

@@ -11,7 +11,7 @@ class User(db.Model):
     userAddr = db.Column(db.String(120), index = True, unique = True)
     #role = db.Column(db.SmallInteger, default = ROLE_USER)
 
-    def __init__(self, mcName, email, userAddr):
+    def __init__(self, mcName=None, email=None, userAddr=None):
       self.mcName = mcName
       self.email = email
       self.userAddr = userAddr

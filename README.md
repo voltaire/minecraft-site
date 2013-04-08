@@ -20,6 +20,10 @@ MAIL_USE_SSL=True
 MAIL_USERNAME='user@mail.server'
 MAIL_PASSWORD='mailpassword'
 
+RECAPTCHA_USE_SSL=True
+RECAPTCHA_PRIVATE_KEY='privkey here'
+RECAPTCHA_PUBLIC_KEY='privkey here'
+
 MCSERVERS = [
         { 'name': 'vanilla',  'hostname': 'ip.addr.here',     'port': '25565' },
         { 'name': 'ftb',      'hostname': 'ip.addr.here',     'port': '25565' },
