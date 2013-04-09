@@ -5,9 +5,13 @@
   <div class="hero-unit centerMe" style="opacity:0.85;">
     <h1>voltaireMC</h1>
     <p>A community-oriented, whitelisted SMP minecraft server. We don't believe in obtrusive plugins and oper abuse.</p>
-    <div class="dashboard-block span11 {{ MCSERVER_NAME }}-block">
-      <img src="/static/img/ajax-loader.gif">
-    </div><!--/mcstatus-block-->
+    <div class="row-fluid">
+      {% for mcservers_iter in config['MCSERVERS'] %}
+      <div class="dashboard-block {{ mcservers_iter['name'] }}-block span{{ 12 // NUMSERVERS }}">
+        <img src="/static/img/ajax-loader.gif">
+      </div><!--/{{ mcservers_iter['name'] }}-block-->
+      {% endfor %}
+    </div><!--/row-fluid-->
   </div><!--/hero-unit-->
 
 {% endblock %}
@@ -17,5 +21,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js" type="text/javascript"></script>
   <script type="text/javascript">$.backstretch("/static/img/bg/arc.png");</script><!--/backstretch-->
   <script type="text/javascript">$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2});$(window).resize(function(){$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2})});$(window).resize();</script><!--center.js-->
-  <script type="text/javascript">$(document).ready(function(){$('.{{ MCSERVER_NAME }}-block').load('/mcstatus/{{ MCSERVER_ADDR }}/{{ MCSERVER_PORT }}');var refreshId=setInterval(function(){$('.{{ MCSERVER_NAME }}-block').load('/mcstatus/{{ MCSERVER_ADDR }}/{{ MCSERVER_PORT }}')},15000);$.ajaxSetup({cache:false})});</script><!--mcstatus-->
+  {% for mcservers_iter in config['MCSERVERS'] %}
+    <script type="text/javascript">$(document).ready(function(){$('.{{ mcservers_iter['name'] }}-block').load('/mcstatus/{{ mcservers_iter['hostname'] }}/{{ mcservers_iter['port'] }}');var refreshId=setInterval(function(){$('.{{ mcservers_iter['name'] }}-block').load('/mcstatus/{{ mcservers_iter['hostname'] }}/{{ mcservers_iter['port'] }}')},15000);$.ajaxSetup({cache:false})});</script><!--mcstatus-->
+  {% endfor %}
 {% endblock %}

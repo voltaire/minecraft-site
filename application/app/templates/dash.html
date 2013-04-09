@@ -6,7 +6,7 @@
     <div class="span11">
         <div class="row-fluid">
             {% for mcservers_iter in config['MCSERVERS'] %}
-            <div class="dashboard-block {{ mcservers_iter['name'] }}-block span{{ 11 // NUMSERVERS }}">
+            <div class="dashboard-block {{ mcservers_iter['name'] }}-block span{{ 12 // NUMSERVERS }}">
                 <img src="/static/img/ajax-loader.gif">
             </div><!--/{{ mcservers_iter['name'] }}-block-->
             {% endfor %}
