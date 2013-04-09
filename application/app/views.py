@@ -23,9 +23,9 @@ def dash():
             SITE_TITLE='Voltaire',
             NUMSERVERS=NUMSERVERS)
 
-@app.route('/about')
+@app.route('/donate')
 def about():
-    return render_template('about.html', 
+    return render_template('donate.html', 
             SITE_TITLE='Voltaire')
 
 @app.route('/mcstatus/<MCSERVER_ADDR>/<int:MCSERVER_PORT>')
