@@ -1,4 +1,5 @@
 from flask import render_template, request, url_for, redirect, flash
+from sqlalchemy import exc
 from app import app, db
 from minecraft_query import MinecraftQuery
 from vmail import testmail
@@ -41,9 +42,18 @@ def signup():
     if request.method == 'POST' and form.validate():
         user = User(form.mcuser.data, form.mcemail.data, userAddr)
         db.session.add(user)
-        db.session.commit()
-        flash('Thanks for signing up. Please check your email for a response soon!')
-        return redirect(url_for('index'))
+
+        try:
+            db.session.commit()
+
+        except exc.IntegrityError:
+            flash('Oh no! It looks like there\'s something wrong with your information. Please contact an admin.')
+            return redirect(url_for('signup'))
+
+        else:
+            flash('Thanks for signing up. Please check your email for a response soon!')
+            return redirect(url_for('index'))
+
     return render_template('signup.html',
             title = 'Signup',
             form = form)
