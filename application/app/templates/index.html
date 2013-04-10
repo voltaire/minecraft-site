@@ -1,7 +1,9 @@
 {% extends "base.html" %}
+{% from "_formhelpers.html" import message_flasher %}
 {% set active_page = "index" %}
 
 {% block content %}
+  {{ message_flasher() }}
   <div class="hero-unit centerMe" style="opacity:0.85;">
     <h1>voltaireMC</h1>
     <p>A community-oriented, whitelisted SMP minecraft server. We don't believe in obtrusive plugins and oper abuse.</p>

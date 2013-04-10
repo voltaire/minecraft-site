@@ -33,3 +33,17 @@
   {% endif %}
 {% endmacro %} 
 
+{% macro message_flasher() %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert">
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div><!--/alert-->
+    {% endif %}
+  {% endwith %}
+{% endmacro %}
+

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_formhelpers.html" import render_field, render_checkbox, ip_hidden_form %}
+{% from "_formhelpers.html" import render_field, render_checkbox, message_flasher %}
 {% set active_page = "signup" %}
 
 {% block content %}
@@ -7,6 +7,7 @@
   <div class="span4 offset4">
     <form action="/signup" method="post" name="signup">
       <legend>Sign Up:</legend>
+      {{ message_flasher() }}
       {{ form.hidden_tag() }}
       {{ render_field(form.mcuser) }}
       {{ render_field(form.mcemail) }}
