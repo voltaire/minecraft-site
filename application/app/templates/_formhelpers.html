@@ -6,7 +6,7 @@
     </div><!--/controls-->
   </div><!--/control-group-->
   {% if field.errors %}
-    <div class="alert">
+    <div class="alert alert-error">
       <ul>
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         {% for error in field.errors %}
@@ -22,7 +22,7 @@
     {{ field(class_="checkbox", **kwargs)|safe }} I accept the ToS!
   </label>
   {% if field.errors %}
-    <div class="alert">
+    <div class="alert alert-error">
       <ul>
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         {% for error in field.errors %}
