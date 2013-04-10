@@ -47,11 +47,11 @@ def signup():
             db.session.commit()
 
         except exc.IntegrityError:
-            flash('Oh no! It looks like there\'s something wrong with your information. Please contact an admin.')
+            flash('Oh no! It looks like there\'s something wrong with your information. Please contact an admin.', 'error')
             return redirect(url_for('signup'))
 
         else:
-            flash('Thanks for signing up. Please check your email for a response soon!')
+            flash('Thanks for signing up. Please check your email for a response soon!', 'success')
             return redirect(url_for('index'))
 
     return render_template('signup.html',
