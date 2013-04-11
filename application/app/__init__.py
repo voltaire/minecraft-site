@@ -12,15 +12,20 @@ babel = Babel(app)
 if not app.debug:
     import logging
     from logging import Formatter, getLogger
-    from logging.handlers import RotatingFileHandler
+    from logging.handlers import RotatingFileHandler, SMTPHandler
 
     file_handler = RotatingFileHandler('logs/errors.log')
-    file_handler.setLevel(logging.WARNING)
+    mail_handler = SMTPHandler(app.config['MAIL_SERVER'],
+                               app.config['MAIL_USERNAME'],
+                               app.config['ADMINS'],
+                               'Application Error')
 
+    file_handler.setLevel(logging.WARNING)
     file_handler.setFormatter(Formatter(
         '%(asctime)s %(levelname)s: %(message)s '
         '[in %(pathname)s:%(lineno)d]'))
 
+    mail_handler.setLevel(logging.ERROR)
     mail_handler.setFormatter(Formatter('''
         Message type:       %(levelname)s
         Location:           %(pathname)s:%(lineno)d
@@ -32,9 +37,6 @@ if not app.debug:
 
         %(message)s
         '''))
-
-    app.log.addHandler(file_handler)
-    app.log.addHandler(mail_handler)
 
     loggers = [app.logger, getLogger('sqlalchemy')]
     for logger in loggers:
