@@ -50,7 +50,7 @@ def signup():
             SignupAlert(form.mcuser.data,
                         form.mcemail.data,
                         userAddr)
-            flash('Oh no! It looks like there\'s something wrong with your information. Please contact an admin.', 'error')
+            flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
             return redirect(url_for('signup'))
 
         else:
