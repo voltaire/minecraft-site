@@ -1,0 +1,8 @@
+The following signup has been flagged:
+
+username: {{ mcuser }}
+email address: {{ mcemail }}
+user IP address: {{ userAddr }}
+
+Regards
+
