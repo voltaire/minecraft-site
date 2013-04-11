@@ -5,6 +5,7 @@ from minecraft_query import MinecraftQuery
 from vmail import testmail, SignupAlert
 from forms import SignupForm
 from models import User
+from traceback import format_exc
 
 @app.route('/')
 def index():
@@ -47,9 +48,11 @@ def signup():
             db.session.commit()
 
         except exc.IntegrityError:
+            tb = format_exc()
             SignupAlert(form.mcuser.data,
                         form.mcemail.data,
-                        userAddr)
+                        userAddr,
+                        tb)
             flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
             return redirect(url_for('signup'))
 
