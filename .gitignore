@@ -3,3 +3,5 @@ env
 .DS_STORE
 config.py
 app.db
+logs/*
+
