@@ -19,9 +19,6 @@ def SignupAlert(mcuser, mcemail,userAddr):
     msg = Message("Signup Alert",
                   sender=("flask", "flask@voltaire.sh"),
                   recipients=ADMINS)
-    #msg.body = "mcuser: " + mcuser + "\nmcemail: " + mcemail + "\nuserAddr: " + userAddr
-    #msg.html = "<b>mcuser:</b> " + mcuser + "<br><b>mcemail:</b> " + mcemail + "<br><b>userAddr:</b> " + userAddr
-    #msg.body = "mcuser: %s\nmcemail: %s\nuserAddr: %s" % (mcuser,mcemail,userAddr)
     msg.body = render_template("signupalert_email.txt",
                                mcuser=mcuser,
                                mcemail=mcemail,
