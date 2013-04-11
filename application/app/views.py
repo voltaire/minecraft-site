@@ -52,7 +52,7 @@ def signup():
 
         else:
             flash('Thanks for signing up. Please check your email for a response soon!', 'success')
-            return redirect(url_for('index'))
+            return redirect(url_for('signup'))
 
     return render_template('signup.html',
             title = 'Signup',
