@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% set active_page = "forum" %}
+
+{% block head %}
+{{ super() }}
+
+<link rel="stylesheet" href="http://cdn.moot.it/1.0/moot.css"/>
+
+{% endblock %}
+
+{% block content %}
+<div class="row-fluid">
+  <div class="span12">
+    <a class="moot" href="http://api.moot.it/voltaire"></a>
+  </div><!--/span12-->
+</div><!--/row-fluid-->
+{% endblock %}
+
+{% block javascripts %}
+{{ super() }}
+<script src="http://cdn.moot.it/1.0/moot.min.js"></script>
+{% endblock %}
+
+
