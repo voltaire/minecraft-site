@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% set active_page = "dynmap" %}
+
+{% block head %}
+    {{super()}}
+    <link rel="stylesheet" type="text/css" href="/static/css/dynmap-embedded.css">
+{% endblock %}
