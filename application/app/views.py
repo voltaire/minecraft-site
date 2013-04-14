@@ -12,8 +12,6 @@ def index():
     NUMSERVERS = len(app.config['MCSERVERS'])
 
     return render_template('index.html',
-            PAGE_TITLE='Home',
-            SITE_TITLE='Voltaire',
             NUMSERVERS=NUMSERVERS)
 
 @app.route('/dash')
@@ -21,14 +19,11 @@ def dash():
     NUMSERVERS = len(app.config['MCSERVERS'])
 
     return render_template('dash.html',
-            PAGE_TITLE='Dashboard',
-            SITE_TITLE='Voltaire',
             NUMSERVERS=NUMSERVERS)
 
 @app.route('/donate')
 def about():
-    return render_template('donate.html', 
-            SITE_TITLE='Voltaire')
+    return render_template('donate.html')
 
 @app.route('/dynmap')
 def dynmap():
@@ -66,6 +61,5 @@ def signup():
             return redirect(url_for('signup'))
 
     return render_template('signup.html',
-            title = 'Signup',
             form = form)
 
