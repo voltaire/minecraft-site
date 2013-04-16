@@ -16,7 +16,7 @@
     <div class="navbar">
       <div class="navbar-inner">
         <a class="brand" href="/">Voltaire</a>
-        <ul class="nav">
+        <ul class="nav pull-left">
 
           {% block navbar %}
 
@@ -37,6 +37,10 @@
           {% endblock %}
 
         </ul>
+
+        <ul class="nav pull-right">
+            <li><a data-toggle="tooltip" class="github-navbar" href="https://github.com/voltaire/minecraft-site" title="We're on GitHub!"><img src="/static/img/github_16px.png"></a></li>
+        </ul>
       </div><!--/navbar-inner-->
     </div><!--/navbar-->
 
@@ -49,6 +53,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-alert.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript">$(".github-navbar").tooltip({animation:true, placement:"bottom"})</script>   
     {% endblock %}
 
   </body>
