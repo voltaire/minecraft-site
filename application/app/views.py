@@ -29,6 +29,11 @@ def about():
 def dynmap():
     return render_template('dynmap.html')
 
+@app.route('/forum')
+def forum():
+    return render_template('forum.html',
+            SITE_TITLE='Voltaire')
+
 @app.route('/mcstatus/<MCSERVER_ADDR>/<int:MCSERVER_PORT>')
 def return_mcstatus(MCSERVER_ADDR, MCSERVER_PORT):
     get_status = MinecraftQuery(MCSERVER_ADDR,MCSERVER_PORT).get_rules()
