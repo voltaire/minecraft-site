@@ -20,3 +20,47 @@
         
 {% endmacro %}
 
+{% macro render_field(field) %}
+  <div class="control-group">
+    {{ field.label(class="control-label") }}
+    <div class="controls">
+      {{ field(**kwargs)|safe }}
+    </div><!--/controls-->
+  </div><!--/control-group-->
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ error }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
+
+{% macro render_checkbox(field) %}
+  <label class="checkbox">
+    {{ field(class_="checkbox", **kwargs)|safe }} I accept the ToS!
+  </label>
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ error }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endmacro %} 
+
+{% macro message_flasher() %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert {% if category %}alert-{{ category }}{% endif %}">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          {{ message }}
+        </div><!--/alert-->
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+{% endmacro %}
+
