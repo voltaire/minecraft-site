@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_errorpage %}
+{% set page_title = "Error" %}
+
+{% block content %}
+    {{render_errorpage(error_code)}}
+{% endblock %}
+
+{% block javascripts %}
+    {{super()}}
+    <script type="text/javascript">$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2});$(window).resize(function(){$('.centerMe').css({position:'absolute',left:($(window).width()-$('.centerMe').outerWidth())/2,top:($(window).height()-$('.centerMe').outerHeight())/2})});$(window).resize();</script><!--center.js-->
+{% endblock %}

@@ -1,0 +1,22 @@
+{% macro render_errorpage(error_code) %}
+
+    <div class="row-fluid">
+        <div class="hero-unit centerMe">
+            <h2>
+                {{error_code}}
+                {% if error_code == "403" %}
+                    Access Forbidden.
+
+                {% elif error_code == "404" %}
+                    Page Not Found.
+
+                {% elif error_code == "500" %}
+                    Server Error.
+
+                {% endif %}
+            </h2><!--/error title-->
+        </div><!--/hero-unit-->
+    </div><!--/row-fluid-->
+        
+{% endmacro %}
+
