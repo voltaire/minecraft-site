@@ -45,7 +45,12 @@ def signup():
     form = SignupForm(request.form)
     applicant_ip = request.environ.get('REMOTE_ADDR')
     if request.method == 'POST' and form.validate():
-        user = User(form.mcuser.data, form.mcemail.data, applicant_ip)
+        user = User(form.mcuser.data,
+                    form.mcemail.data,
+                    form.applicant_age.data,
+                    form.applicant_skills.data,
+                    applicant_ip)
+
         db.session.add(user)
 
         try:
@@ -55,8 +60,8 @@ def signup():
             tb = format_exc()
             SignupAlert(form.mcuser.data,
                         form.mcemail.data,
-                        form.applicant_age,
-                        form.applicant_skills,
+                        form.applicant_age.data,
+                        form.applicant_skills.data,
                         applicant_ip,
                         tb)
             flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
