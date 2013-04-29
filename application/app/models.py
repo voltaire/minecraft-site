@@ -1,19 +1,18 @@
 from app import db
 
-ROLE_USER = -1
-ROLE_MEMBER = 0
-ROLE_ADMIN = 1
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     mcuser = db.Column(db.String(16), index = True, unique = True)
     mcemail = db.Column(db.String(120), index = True, unique = True)
+    applicant_age = db.Column(db.SmallInteger, default = 15)
+    applicant_skills = db.Column(db.String(), index = True, unique = False)
     applicant_ip = db.Column(db.String(120), index = True, unique = True)
-    #role = db.Column(db.SmallInteger, default = ROLE_USER)
 
-    def __init__(self, mcuser=None, mcemail=None, applicant_ip=None):
+    def __init__(self, mcuser=None, mcemail=None, applicant_age=None, applicant_skills=None, applicant_ip=None):
       self.mcuser = mcuser
       self.mcemail = mcemail
+      self.applicant_age = applicant_age
+      self.applicant_skills = applicant_skills
       self.applicant_ip = applicant_ip
 
     def __repr__(self):

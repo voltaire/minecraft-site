@@ -55,6 +55,8 @@ def signup():
             tb = format_exc()
             SignupAlert(form.mcuser.data,
                         form.mcemail.data,
+                        form.applicant_age,
+                        form.applicant_skills,
                         applicant_ip,
                         tb)
             flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
