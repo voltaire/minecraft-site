@@ -4,7 +4,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     mcuser = db.Column(db.String(16), index = True, unique = True)
     mcemail = db.Column(db.String(120), index = True, unique = True)
-    applicant_age = db.Column(db.SmallInteger, default = 15)
+    applicant_age = db.Column(db.SmallInteger(), default = 15)
     applicant_skills = db.Column(db.String(), index = True, unique = False)
     applicant_ip = db.Column(db.String(120), index = True, unique = True)
 
