@@ -8,13 +8,13 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     mcName = db.Column(db.String(16), index = True, unique = True)
     email = db.Column(db.String(120), index = True, unique = True)
-    userAddr = db.Column(db.String(120), index = True, unique = True)
+    applicant_ip = db.Column(db.String(120), index = True, unique = True)
     #role = db.Column(db.SmallInteger, default = ROLE_USER)
 
-    def __init__(self, mcName=None, email=None, userAddr=None):
+    def __init__(self, mcName=None, email=None, applicant_ip=None):
       self.mcName = mcName
       self.email = email
-      self.userAddr = userAddr
+      self.applicant_ip = applicant_ip
 
     def __repr__(self):
         return '<User %r>' % (self.mcName)

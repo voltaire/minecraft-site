@@ -43,9 +43,9 @@ def return_mcstatus(MCSERVER_ADDR, MCSERVER_PORT):
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
     form = SignupForm(request.form)
-    userAddr = request.environ.get('REMOTE_ADDR')
+    applicant_ip = request.environ.get('REMOTE_ADDR')
     if request.method == 'POST' and form.validate():
-        user = User(form.mcuser.data, form.mcemail.data, userAddr)
+        user = User(form.mcuser.data, form.mcemail.data, applicant_ip)
         db.session.add(user)
 
         try:
@@ -55,7 +55,7 @@ def signup():
             tb = format_exc()
             SignupAlert(form.mcuser.data,
                         form.mcemail.data,
-                        userAddr,
+                        applicant_ip,
                         tb)
             flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
             return redirect(url_for('signup'))
