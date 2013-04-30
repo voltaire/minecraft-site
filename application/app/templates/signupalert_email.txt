@@ -1,10 +1,13 @@
 The following signup has been flagged:
 
-username: {{ mcuser }}
-email address: {{ mcemail }}
-user IP address: {{ userAddr }}
+username: {{mcuser}}
+email address: {{mcemail}}
+age: {{applicant_age}}
+skills entered: {{applicant_skills}}
+user IP address: {{applicant_ip}}
 
-{{ tb }}
+------------------------------------------------------------------------------
+{{tb}}
 
 Regards
 
