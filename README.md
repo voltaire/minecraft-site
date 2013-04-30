@@ -35,6 +35,7 @@ MCSERVERS = [
 * [Jinja2](http://jinja.pocoo.org/)
 * [Flask](http://flask.pocoo.org/)
 * [Python](http://www.python.org/)
+* [goldblattster for fishbans-python](https://github.com/goldblattster/fishbans-python)
 
 ### LICENSE
 Copyright (c) 2013, [fly](https://github.com/fly)
