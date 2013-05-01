@@ -7,13 +7,15 @@ class User(db.Model):
     applicant_age = db.Column(db.SmallInteger(), default = 15)
     applicant_skills = db.Column(db.String(), index = True, unique = False)
     applicant_ip = db.Column(db.String(120), index = True, unique = True)
+    fishbanned = db.Column(db.Boolean(), index = True, unique = False)
 
-    def __init__(self, mcuser=None, mcemail=None, applicant_age=None, applicant_skills=None, applicant_ip=None):
+    def __init__(self, mcuser=None, mcemail=None, applicant_age=None, applicant_skills=None, applicant_ip=None, fishbanned=None):
       self.mcuser = mcuser
       self.mcemail = mcemail
       self.applicant_age = applicant_age
       self.applicant_skills = applicant_skills
       self.applicant_ip = applicant_ip
+      self.fishbanned = fishbanned
 
     def __repr__(self):
         return '<User %r>' % (self.mcuser)

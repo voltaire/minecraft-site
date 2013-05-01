@@ -6,6 +6,8 @@ from vmail import testmail, SignupAlert
 from forms import SignupForm
 from models import User
 from traceback import format_exc
+from fishexc import FishbansException
+import fishstats
 
 @app.route('/')
 def index():
@@ -49,7 +51,8 @@ def signup():
                     form.mcemail.data,
                     form.applicant_age.data,
                     form.applicant_skills.data,
-                    applicant_ip)
+                    applicant_ip,
+                    fishstats.Player(form.mcuser.data).hasBeenBanned())
 
         db.session.add(user)
 
@@ -63,6 +66,7 @@ def signup():
                         form.applicant_age.data,
                         form.applicant_skills.data,
                         applicant_ip,
+                        fishstats.Player(form.mcuser.data).hasBeenBanned(),
                         tb)
             flash('Oh no! It looks like there\'s something wrong with your information. Admins have been contacted.', 'error')
             return redirect(url_for('signup'))

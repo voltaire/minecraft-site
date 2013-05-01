@@ -1,0 +1,2 @@
+class FishbansException(Exception):
+    pass
