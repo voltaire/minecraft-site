@@ -1,3 +1,4 @@
+from sqlalchemy.dialects import postgresql
 from app import db
 
 class User(db.Model):
@@ -19,6 +20,22 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % (self.mcuser)
+
+class MinecraftServers(db.Model):
+
+
+    id = db.Column(db.Integer, primary_key = True)
+    server_name = db.Column(db.String(140))
+    server_address = db.Column(postgresql.INET)
+    server_port = db.Column(db.SmallInteger())
+
+    def __init__(self, server_name=None, server_address=None, server_port=None):
+        self.server_name = server_name
+        self.server_address = server_address
+        self.server_port = server_port
+
+    def __repr__(self):
+        return '<Server %r>' % (self.server_name)
 
 class UserApplication(db.Model):
 
