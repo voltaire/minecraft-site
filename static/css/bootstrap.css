@@ -214,7 +214,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  background-image: url("/static/img/smooth_brick.png");
 }
 a {
   color: #0088cc;
