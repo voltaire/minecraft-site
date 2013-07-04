@@ -15,16 +15,17 @@ def testmail():
     msg.html = "<b>testing</b>"
     mail.send(msg)
 
-def SignupAlert(mcuser, mcemail, applicant_ip, applicant_age, applicant_skills, tb):
+def SignupAlert(mcuser, mcemail, applicant_age, applicant_skills, applicant_ip, fishbanned, tb):
     msg = Message("Signup Alert",
                   sender=("flask", "flask@voltaire.sh"),
                   recipients=ADMINS)
     msg.body = render_template("signupalert_email.txt",
                                mcuser=mcuser,
                                mcemail=mcemail,
-                               applicant_ip=applicant_ip,
                                applicant_age=applicant_age,
                                applicant_skills=applicant_skills,
+                               applicant_ip=applicant_ip,
+                               fishbanned=fishbanned,
                                tb=tb)
     mail.send(msg)
 

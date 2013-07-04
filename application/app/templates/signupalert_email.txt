@@ -5,6 +5,7 @@ email address: {{mcemail}}
 age: {{applicant_age}}
 skills entered: {{applicant_skills}}
 user IP address: {{applicant_ip}}
+fishban: {{fishbanned}}
 
 ------------------------------------------------------------------------------
 {{tb}}

@@ -58,6 +58,14 @@ def signup():
 
         try:
             db.session.commit()
+            tb = format_exc()
+            SignupAlert(form.mcuser.data,
+                        form.mcemail.data,
+                        form.applicant_age.data,
+                        form.applicant_skills.data,
+                        applicant_ip,
+                        fishstats.Player(form.mcuser.data).hasBeenBanned(),
+                        tb)
 
         except exc.IntegrityError:
             tb = format_exc()
