@@ -1,4 +1,6 @@
-# Voltaire Dashboard
+# mc.voltaire.sh
+
+[![Build Status](https://travis-ci.org/voltaire/minecraft-site.png?branch=master)](https://travis-ci.org/voltaire/minecraft-site)
 
 #### Errata:
 * Create a config file in ```application/config.py``` with the following contents:
