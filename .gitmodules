@@ -1,3 +1,0 @@
-[submodule "application/static/blog"]
-	path = application/static/blog
-	url = git@github.com:voltaire/blog.git
