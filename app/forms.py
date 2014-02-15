@@ -1,4 +1,8 @@
-from flask.ext.wtf import Form, TextField, BooleanField, PasswordField, validators, HiddenField, RecaptchaField, IntegerField, TextAreaField
+from flask.ext.wtf import Form
+from wtforms import TextField, BooleanField, PasswordField, HiddenField, \
+    RecaptchaField, IntegerField, TextAreaField
+from wtforms.validators import ValidationError, IPAddress, Required, Length, \
+    Email, NumberRange
 from flask import request
 import urllib
 
@@ -17,42 +21,42 @@ class mcHasPaid(object):
       f = urllib.urlopen("http://minecraft.net/haspaid.jsp?user=%s" % param)
 
       if f.read() == 'false':
-        raise validators.ValidationError(self.message)
+        raise ValidationError(self.message)
 
 class SignupForm(Form):
 
 
     applicant_ip = HiddenField([
-        validators.IPAddress(ipv6=True),
-        validators.Required(message='Contact the administrator.')
+        IPAddress(ipv6=True),
+        Required(message='Contact the administrator.')
         ])
 
     mcuser = TextField('Minecraft Username:', [
-        validators.Length(max=16, message='Username too long!'),
-        validators.Regexp('\w', message='Illegal username!'),
+        Length(max=16, message='Username too long!'),
+        Regexp('\w', message='Illegal username!'),
         mcHasPaid(),
-        validators.Required(message='Enter your Minecraft Username!')
+        Required(message='Enter your Minecraft Username!')
         ])
 
     mcemail = TextField('Email Address:', [
-        validators.Length(min=6, max=35, message='Email needs to be between 6-35 characters!'),
-        validators.Required(message='Enter your email address!'),
-        validators.Email(message='Invalid email address!')
+        Length(min=6, max=35, message='Email needs to be between 6-35 characters!'),
+        Required(message='Enter your email address!'),
+        Email(message='Invalid email address!')
         ])
 
     applicant_age = IntegerField('Age:', [
-        validators.NumberRange(min=15, max=100, message='Gotta be at least 15, sorry!'),
-        validators.Required(message='Enter your age!')
+        NumberRange(min=15, max=100, message='Gotta be at least 15, sorry!'),
+        Required(message='Enter your age!')
         ])
 
     applicant_skills = TextAreaField('Particular Skills:', [
-        validators.Length(min=3, max=500, message='Either you are too long winded (keep it under 500 chars please), or you need to write more!'),
-        validators.Required(message='Please write something here.')
+        Length(min=3, max=500, message='Either you are too long winded (keep it under 500 chars please), or you need to write more!'),
+        Required(message='Please write something here.')
         ])
 
     recaptcha = RecaptchaField()
 
     accept_tos = BooleanField('I accept the TOS.', [
-        validators.Required(message='Please accept the TOS!')
+        Required(message='Please accept the TOS!')
         ])
 
