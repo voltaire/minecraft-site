@@ -1,8 +1,8 @@
-from flask.ext.wtf import Form
+from flask.ext.wtf import Form, RecaptchaField
 from wtforms import TextField, BooleanField, PasswordField, HiddenField, \
-    RecaptchaField, IntegerField, TextAreaField
+    IntegerField, TextAreaField
 from wtforms.validators import ValidationError, IPAddress, Required, Length, \
-    Email, NumberRange
+    Email, NumberRange, Regexp
 from flask import request
 import urllib
 
