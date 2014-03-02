@@ -36,6 +36,7 @@ def forum():
     return render_template('forum.html',
             SITE_TITLE='Voltaire')
 
+@app.route('/mcstatus/<MCSERVER_ADDR/', defaults={'MCSERVER_PORT': 25565})
 @app.route('/mcstatus/<MCSERVER_ADDR>/<int:MCSERVER_PORT>')
 def return_mcstatus(MCSERVER_ADDR, MCSERVER_PORT):
     get_status = MinecraftQuery(MCSERVER_ADDR,MCSERVER_PORT).get_rules()
