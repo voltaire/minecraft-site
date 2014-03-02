@@ -10,10 +10,10 @@
       <legend>Sign Up:</legend>
       {{ message_flasher() }}
       {{ form.hidden_tag() }}
-      {{ render_field(form.mcuser) }}
-      {{ render_field(form.mcemail) }}
-      {{ render_field(form.applicant_age) }}
-      {{ render_field(form.applicant_skills) }}
+      {{ render_field(form.mcuser, placeholder="Minecraft username") }}
+      {{ render_field(form.mcemail, placeholder="Email") }}
+      {{ render_field(form.applicant_age, placeholder="Age") }}
+      {{ render_field(form.applicant_skills, placeholder="Particular skills") }}
       <div class="control-group">
         <div class="controls">
           {{ render_field(form.recaptcha) }}
