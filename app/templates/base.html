@@ -12,36 +12,7 @@
   </head>
   <body>
 
-    <div class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="/">Voltaire</a>
-        <ul class="nav pull-left">
-
-          {% block navbar %}
-
-          {% set navigation_bar = [
-            ('/', 'index', 'Home'),
-            ('/blog', 'blog', 'Blog'),
-            ('/forum', 'forum', 'Forum'),
-            ('/map', 'map', 'Map'),
-            ('/donate', 'donate', 'Donate'),
-            ('/dash', 'dash', 'Dash'),
-            ('/signup', 'signup', 'Apply')
-          ] -%}
-          {% set active_page = active_page|default('') -%}          
-
-          {% for href, id, caption in navigation_bar %}
-          <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-          {% endfor %}
-          {% endblock %}
-
-        </ul>
-
-        <ul class="nav pull-right">
-            <li><a data-toggle="tooltip" class="github-navbar" href="https://github.com/voltaire/minecraft-site" title="We're on GitHub!"><img src="/static/img/github_16px.png"></a></li>
-        </ul>
-      </div><!--/navbar-inner-->
-    </div><!--/navbar-->
+    {% include 'navbar.html' %}
 
     <div class="container">
       {% block content %}{% endblock %}
