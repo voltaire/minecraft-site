@@ -1,30 +1,40 @@
 {% block navbar %}
-    <div class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="/">Voltaire</a>
-        <ul class="nav pull-left">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Voltaire</a>
+            </div>
 
-          {% set navigation_bar = [
-            ('/', 'index', 'Home'),
-            ('/blog', 'blog', 'Blog'),
-            ('/forum', 'forum', 'Forum'),
-            ('/map', 'map', 'Map'),
-            ('/donate', 'donate', 'Donate'),
-            ('/dash', 'dash', 'Dash'),
-            ('/signup', 'signup', 'Apply')
-          ] -%}
-          {% set active_page = active_page|default('') -%}
+            <div class="collapse navbar-collapse" id="header-nav">
+                <ul class="nav navbar-nav navbar-left">
+                    {% set navigation_bar = [
+                        ('/', 'index', 'Home'),
+                        ('/blog', 'blog', 'Blog'),
+                        ('/forum', 'forum', 'Forum'),
+                        ('/map', 'map', 'Map'),
+                        ('/donate', 'donate', 'Donate'),
+                        ('/dash', 'dash', 'Dash'),
+                        ('/signup', 'signup', 'Apply')
+                    ] -%}
+                    {% set active_page = active_page|default('') -%}
 
-          {% for href, id, caption in navigation_bar %}
-          <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-          {% endfor %}
+                    {% for href, id, caption in navigation_bar %}
+                        <li{% if id == active_page %} class="active"{% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                    {% endfor %}
 
-        </ul>
+                </ul>
 
-        <ul class="nav pull-right">
-            <li><a data-toggle="tooltip" class="github-navbar" href="https://github.com/voltaire/minecraft-site" title="We're on GitHub!"><img src="/static/img/github_16px.png"></a></li>
-        </ul>
-      </div><!--/navbar-inner-->
+                <ul class="nav pull-right">
+                    <li><a data-toggle="tooltip" class="github-navbar" href="https://github.com/voltaire/minecraft-site" title="We're on GitHub!"><img src="/static/img/github_16px.png"></a></li>
+                </ul>
+            </div><!--/navbar-collapse-->
+        </div><!--/container-fluid-->
     </div><!--/navbar-->
 {% endblock %}
 
