@@ -4,26 +4,24 @@
 {% set active_page = "signup" %}
 
 {% block content %}
-<div class="row-fluid signup">
-  <div class="span4 offset4">
-    <form action="/signup" method="post" name="signup">
-      <legend>Sign Up:</legend>
-      {{ message_flasher() }}
-      {{ form.hidden_tag() }}
-      {{ render_field(form.mcuser, placeholder="Minecraft username") }}
-      {{ render_field(form.mcemail, placeholder="Email") }}
-      {{ render_field(form.applicant_age, placeholder="Age") }}
-      {{ render_field(form.applicant_skills, placeholder="Particular skills") }}
-      <div class="control-group">
-        <div class="controls">
-          {{ render_field(form.recaptcha) }}
-          {{ render_checkbox(form.accept_tos) }}
-          <br />
-          <button type="submit" class="btn btn-primary">Sign Up!</button>
-        </div><!--/controls-->
-      </div><!--/control-group-->
-    </form>
-  </div><!--/span4 offset3-->
-</div><!--/row-fluid signup-->
+    <div class="row signup">
+      <div class="col-md-2 col-md-offset-4">
+        <form action="/signup" method="post" name="signup">
+          <legend>Sign Up:</legend>
+          {{ message_flasher() }}
+          {{ form.hidden_tag() }}
+          {{ render_field(form.mcuser, placeholder="Minecraft username") }}
+          {{ render_field(form.mcemail, placeholder="Email") }}
+          {{ render_field(form.applicant_age, placeholder="Age") }}
+          {{ render_field(form.applicant_skills, placeholder="Particular skills") }}
+          <div class="form-group">
+              {{ render_field(form.recaptcha) }}
+              {{ render_checkbox(form.accept_tos) }}
+              <br />
+              <button type="submit" class="btn btn-primary">Sign Up!</button>
+          </div><!--/control-group-->
+        </form>
+      </div><!--/span4 offset3-->
+    </div><!--/row-fluid signup-->
 {% endblock %}
 
