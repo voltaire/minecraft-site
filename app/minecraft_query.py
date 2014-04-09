@@ -144,8 +144,8 @@ class MinecraftQuery:
                 pass
 
         data['raw_plugins'] = data['plugins']
-        data['software'],
-        data['plugins'] = self.parse_plugins(data['raw_plugins'])
+        data['software'], data['plugins'] = self.parse_plugins(
+            data['raw_plugins'])
 
         return data
 
