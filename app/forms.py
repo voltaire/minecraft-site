@@ -45,7 +45,7 @@ class SignupForm(Form):
         ])
 
     applicant_age = IntegerField('Age:', [
-        NumberRange(min=15, max=100, message='Gotta be at least 15, sorry!'),
+        NumberRange(min=15, message='Gotta be at least 15, sorry!'),
         Required(message='Enter your age!')
         ])
 
