@@ -1,21 +1,32 @@
-from flask.ext.mail import Mail, Message
+from flask.ext.mail import Message
 from flask import render_template
-from app import app, mail
+from app import mail
 from config import ADMINS
 
+
 def send_email(subject, sender, recipients, text_body, html_body):
-    msg = Message(subject, sender = sender, recipients = recipients)
+    msg = Message(subject, sender=sender, recipients=recipients)
     msg.body = text_body
     msg.html = html_body
     mail.send(msg)
 
+
 def testmail():
-    msg = Message("Hello", sender=("flask", "flask@voltaire.sh"), recipients=["sjchen@sjchen.net"])
+    msg = Message("Hello",
+                  sender=("flask", "flask@voltaire.sh"),
+                  recipients=["sjchen@sjchen.net"])
     msg.body = "testing"
     msg.html = "<b>testing</b>"
     mail.send(msg)
 
-def SignupAlert(mcuser, mcemail, applicant_age, applicant_skills, applicant_ip, fishbanned, tb):
+
+def SignupAlert(mcuser,
+                mcemail,
+                applicant_age,
+                applicant_skills,
+                applicant_ip,
+                fishbanned,
+                tb):
     msg = Message("Signup Alert",
                   sender=("flask", "flask@voltaire.sh"),
                   recipients=ADMINS)
@@ -28,4 +39,3 @@ def SignupAlert(mcuser, mcemail, applicant_age, applicant_skills, applicant_ip, 
                                fishbanned=fishbanned,
                                tb=tb)
     mail.send(msg)
-

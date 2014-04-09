@@ -4,6 +4,7 @@ import json
 from fishexc import FishbansException
 ENDPOINT = 'http://www.fishbans.com/api/'
 
+
 class Player(object):
     def __init__(self, player_name):
         self.player_name = player_name
@@ -14,7 +15,7 @@ class Player(object):
         json_data = resp.read()
 
         data = json.loads(json_data)
-        if data['success'] == True:
+        if data['success'] is True:
             return data['bans']
         else:
             raise FishbansException(data['error'])
@@ -26,11 +27,12 @@ class Player(object):
         json_data = resp.read()
 
         data = json.loads(json_data)
-        if data['success'] == True:
+        if data['success'] is True:
             return True
         else:
             raise FishbansException(data['error'])
             return False
+
 
 class ServicePlayer(Player):
     def __init__(self, player_name, service):
@@ -38,16 +40,18 @@ class ServicePlayer(Player):
         self.service = service
 
     def get_bans(self):
-        endpoint = ENDPOINT + 'bans/{0}/{1}/'.format(self.player_name, self.service)
+        endpoint = ENDPOINT + 'bans/{0}/{1}/'.format(
+            self.player_name, self.service)
         resp = urllib2.urlopen(endpoint)
         json_data = resp.read()
 
         data = json.loads(json_data)
-        if data['success'] == True:
+        if data['success'] is True:
             return data['bans']
         else:
             raise FishbansException(data['error'])
             return data
+
 
 class Service(object):
     def __init__(self, service):

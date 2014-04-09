@@ -1,5 +1,5 @@
 from flask import Flask
-from flask.ext.mail import Mail, Message
+from flask.ext.mail import Mail
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.babel import Babel
 
@@ -44,4 +44,3 @@ if not app.debug:
         logger.addHandler(file_handler)
 
 from app import views, models
-
