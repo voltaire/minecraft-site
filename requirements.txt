@@ -11,7 +11,7 @@ Flask-WhooshAlchemy==0.55
 Jinja2==2.7.2
 Mako==0.9.1
 Markdown==2.4
-MarkupSafe==0.19
+MarkupSafe==0.21
 Pygments==1.6
 SQLAlchemy==0.9.4
 Tempita==0.5.2
@@ -30,7 +30,7 @@ flup==1.0.3.dev-20110405
 itsdangerous==0.24
 mccabe==0.2.1
 pelican==3.3
-pep8==1.5.4
+pep8==1.5.6
 pyflakes==0.8.1
 pytz==2014.2
 six==1.6.1
