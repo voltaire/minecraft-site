@@ -1,11 +1,10 @@
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 MCSERVERS = [
         { 'name': 'vanilla',  'hostname': 'mc.voltaire.sh',     'port': '25565' },
         { 'name': 'creative', 'hostname': 'create.voltaire.sh', 'port': '25567' }]
 
-import os
-basedir = os.path.abspath(os.path.dirname(__file__))
-
-#SQLALCHEMY_DATABASE_URI = 'postgresql://user:password@ip/db'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
@@ -23,4 +22,3 @@ RECAPTCHA_PUBLIC_KEY='pubkey'
 
 CSRF_ENABLED = True
 SECRET_KEY = 'supersekrit'
-
