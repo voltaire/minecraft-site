@@ -17,14 +17,6 @@ def index():
                            NUMSERVERS=NUMSERVERS)
 
 
-@app.route('/dash')
-def dash():
-    NUMSERVERS = len(app.config['MCSERVERS'])
-
-    return render_template('dash.html',
-                           NUMSERVERS=NUMSERVERS)
-
-
 @app.route('/donate')
 def about():
     return render_template('donate.html')
