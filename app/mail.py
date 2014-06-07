@@ -1,6 +1,6 @@
 from flask.ext.mail import Message
 from flask import render_template
-from app import mail
+from app import mailer
 from config import ADMINS
 
 
@@ -8,7 +8,7 @@ def send_email(subject, sender, recipients, text_body, html_body):
     msg = Message(subject, sender=sender, recipients=recipients)
     msg.body = text_body
     msg.html = html_body
-    mail.send(msg)
+    mailer.send(msg)
 
 
 def testmail():
@@ -17,7 +17,7 @@ def testmail():
                   recipients=["sjchen@sjchen.net"])
     msg.body = "testing"
     msg.html = "<b>testing</b>"
-    mail.send(msg)
+    mailer.send(msg)
 
 
 def SignupAlert(mcuser,
@@ -38,4 +38,4 @@ def SignupAlert(mcuser,
                                applicant_ip=applicant_ip,
                                fishbanned=fishbanned,
                                tb=tb)
-    mail.send(msg)
+    mailer.send(msg)

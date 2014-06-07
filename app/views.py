@@ -2,7 +2,7 @@ from flask import render_template, request, url_for, redirect, flash
 from sqlalchemy import exc
 from app import app, db
 from minecraft_query import MinecraftQuery
-from vmail import SignupAlert
+from mail import SignupAlert
 from forms import SignupForm
 from models import User
 from traceback import format_exc

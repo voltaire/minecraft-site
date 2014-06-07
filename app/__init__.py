@@ -4,7 +4,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config.from_object('config')
-mail = Mail(app)
+mailer = Mail(app)
 db = SQLAlchemy(app)
 
 if not app.debug:
