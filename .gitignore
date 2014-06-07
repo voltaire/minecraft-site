@@ -5,3 +5,4 @@ config.py
 app.db
 application/logs/*
 
+blog/
