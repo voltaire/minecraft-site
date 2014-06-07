@@ -1,8 +1,4 @@
 <h3>
-    {#    {% if get_status['numplayers'] == 0 %} Nobody is being awesome right now.
-    {% elif get_status['numplayers'] == 1 %} The Lone Ranger:
-    {% elif get_status['numplayers'] > 1 %}{{ get_status['numplayers'] }} Minecrafters online now:
-    {% endif %}#}
     {% if get_status['numplayers'] == 0 %}{{ get_status['numplayers'] }}/{{ get_status['maxplayers'] }}{% endif %}
 </h3>
 
