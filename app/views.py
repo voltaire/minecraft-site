@@ -86,6 +86,11 @@ def signup():
                            form=form)
 
 
+@app.route('/blog')
+def blog_redirect():
+    return redirect('/blog')
+
+
 @app.errorhandler(403)
 def page_forbidden(e):
     return render_template('errorpage.html', error_code='403'), 403
