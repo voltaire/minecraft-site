@@ -1,4 +1,4 @@
-FROM docku/python2
+FROM dock0/service
 MAINTAINER Jon Chen <bsd@voltaire.sh>
 
 EXPOSE 8080
