@@ -1,8 +1,0 @@
-*.pyc
-env
-.DS_STORE
-config.py
-app.db
-application/logs/*
-
-blog/

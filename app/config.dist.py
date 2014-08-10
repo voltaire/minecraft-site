@@ -5,7 +5,7 @@ MCSERVERS = [
     {'name': 'vanilla', 'hostname': 'mc.voltaire.sh', 'port': '25565'},
     {'name': 'creative', 'hostname': 'create.voltaire.sh', 'port': '25567'}]
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_DATABASE_URI = 'sqlite:////var/db/voltaire/app.db'
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 MAIL_SERVER = 'smtp.gmail.com'
