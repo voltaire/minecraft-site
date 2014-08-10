@@ -1,5 +1,5 @@
 LICENSE
 README.md
-config.dist.py
+app/config.dist.py
 .git
-.gitignore
+app/.gitignore
