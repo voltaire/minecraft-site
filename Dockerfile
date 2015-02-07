@@ -1,4 +1,4 @@
-FROM dockU/uwsgi-python2
+FROM docku/uwsgi-python2
 MAINTAINER Jon Chen <bsd@voltaire.sh>
 
 VOLUME ["/etc/nginx/enabled-sites/"]
