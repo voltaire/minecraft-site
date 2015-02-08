@@ -4,7 +4,7 @@ MAINTAINER Jon Chen <bsd@voltaire.sh>
 VOLUME ["/etc/nginx/enabled-sites/"]
 
 ADD etc/nginx/mc-voltaire-sh.conf /etc/nginx/enabled-sites/
-ADD etc/uwsgi/voltairesh.ini /etc/uwsgi/voltairesh.ini
+ADD etc/uwsgi/voltairemc.ini /etc/uwsgi/voltairemc.ini
 ADD app /srv/http/
 
 RUN pacman -Syu --needed --noconfirm python2 python2-pip
