@@ -11,22 +11,13 @@ def send_email(subject, sender, recipients, text_body, html_body):
     mailer.send(msg)
 
 
-def testmail():
-    msg = Message("Hello",
-                  sender=("flask", "flask@voltaire.sh"),
-                  recipients=["sjchen@sjchen.net"])
-    msg.body = "testing"
-    msg.html = "<b>testing</b>"
-    mailer.send(msg)
-
-
-def SignupAlert(mcuser,
-                mcemail,
-                applicant_age,
-                applicant_skills,
-                applicant_ip,
-                fishbanned,
-                tb):
+def signup_alert(mcuser,
+                 mcemail,
+                 applicant_age,
+                 applicant_skills,
+                 applicant_ip,
+                 fishbanned,
+                 tb):
     msg = Message("Signup Alert",
                   sender=("flask", "flask@voltaire.sh"),
                   recipients=ADMINS)
