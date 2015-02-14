@@ -18,9 +18,10 @@ def signup_alert(mcuser,
                  applicant_ip,
                  fishbanned,
                  tb):
-    msg = Message("Signup Alert",
-                  sender=("flask", "flask@voltaire.sh"),
-                  recipients=ADMINS)
+    msg = Message(
+        "Signup Alert", sender=(
+            app.config.get('MAIL_USER'), app.config.get('MAIL_USER')),
+        recipients=ADMINS)
     msg.body = render_template("signupalert_email.txt",
                                mcuser=mcuser,
                                mcemail=mcemail,
